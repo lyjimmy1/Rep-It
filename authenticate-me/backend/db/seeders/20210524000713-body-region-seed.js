@@ -13,19 +13,12 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Bodyregions', [
-        {
-        body_type: 'Chest'
-      },{
-
-      },{
-        body_type: 'Chest'
-      },{
-
-      },{
-        body_type: 'Chest'
-      },{
-
-      }], {});
+        {body_type: 'Chest', createdAt: new Date(),updatedAt: new Date()},
+        {body_type: 'Shoulders', createdAt: new Date(),updatedAt: new Date()},
+        {body_type: 'Arms', createdAt: new Date(),updatedAt: new Date()},
+        {body_type: 'Legs', createdAt: new Date(),updatedAt: new Date()},
+        {body_type: 'Accessories', createdAt: new Date(),updatedAt: new Date()}
+  ], {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -36,5 +29,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
+      return queryInterface.bulkDelete('Bodyregions', null, {});
   }
 };
