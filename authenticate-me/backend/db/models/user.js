@@ -1,6 +1,5 @@
 'use strict';
 const { Validator } = require('sequelize');
-const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -48,8 +47,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Review, {foreignKey: "users_id"})
+    User.hasMany(models.Exercise, {foreignKey: "user_id"})
   };
-
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance
     return { id, username, email };
@@ -87,6 +87,5 @@ module.exports = (sequelize, DataTypes) => {
     });
     return await User.scope('currentUser').findByPk(user.id);
   };
-
   return User;
 };
