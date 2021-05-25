@@ -3,6 +3,7 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const exerciseRouter = require('./exercise.js');
 
+
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/exercises', exerciseRouter);

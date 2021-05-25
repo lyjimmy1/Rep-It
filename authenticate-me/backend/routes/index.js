@@ -8,6 +8,7 @@ router.use('/api', apiRouter);
 //   res.cookie('XSRF-TOKEN', req.csrfToken());
 //   res.send('Hello World!');
 // });
+
 // Static routes
 // Serve React build files in production
 if (process.env.NODE_ENV === 'production') {
@@ -32,11 +33,11 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
 
-  if (process.env.NODE_ENV !== 'production') {
-    router.get('/api/csrf/restore', (req, res) => {
-      res.cookie('XSRF-TOKEN', req.csrfToken());
-      return res.json({});
-    });
-  }
+if (process.env.NODE_ENV !== 'production') {
+  router.get('/api/csrf/restore', (req, res) => {
+    res.cookie('XSRF-TOKEN', req.csrfToken());
+    return res.json({});
+  });
+}
 
 module.exports = router;
