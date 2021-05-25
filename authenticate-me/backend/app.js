@@ -8,6 +8,7 @@ const { environment } = require('./config');
 const isProduction = environment === 'production';
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
+// const exerciseRouter = require('./routes/api/exercise');
 
 //initialize express app
 const app = express();
@@ -41,6 +42,7 @@ if (!isProduction) {
   );
 
 app.use(routes);
+// app.use('/exercises', exerciseRouter)
 
 // Catch unhandled requests and forward to error handler.
 app.use((_req, _res, next) => {
