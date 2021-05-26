@@ -1,0 +1,22 @@
+.navBar {
+    border: 2px solid teal;
+    border-radius: 10px;
+    background-color: pink;
+}
+
+.navItems{
+    display:flex;
+    justify-content: space-around;
+}
+.button {
+    background-color: teal; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+
+}

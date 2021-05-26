@@ -1,0 +1,8 @@
+.exercisePage{
+    background-color: coral;
+}
+
+.exerciseItems{
+    display: flex;
+    justify-content: space-between;
+}
