@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {makeExercise} from '../../store/exercise'
 
 
-const CreateExerciseForm = ()=>{
+const CreateExerciseForm=()=>{
     const dispatch = useDispatch();
     const exercises = useSelector(state => state.exercise)
     const [name, setName] = useState("");
