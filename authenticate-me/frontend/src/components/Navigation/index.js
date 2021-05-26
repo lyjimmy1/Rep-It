@@ -11,12 +11,16 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
       <>
-        <NavLink className="button" exact to="/api/exercises">Exercises</NavLink>
+      <NavLink className="button" exact to="/api/exercises">Exercises</NavLink>
+      <NavLink className="button" to="/api/newexercise">Create New Exercise</NavLink>
+      <ProfileButton user={sessionUser} />
+     </>
+
+      );
+    } else {
+      sessionLinks = (
+        <>
         <LoginFormModal />
         <NavLink className="button" to="/signup">Sign Up</NavLink>
       </>
