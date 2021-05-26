@@ -13,7 +13,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       <NavLink className="button" exact to="/api/exercises">Exercises</NavLink>
-      <NavLink className="button" to="/api/newexercise">Create New Exercise</NavLink>
+      <NavLink className="button" to="/api/exercises/new">Create New Exercise</NavLink>
       <ProfileButton user={sessionUser} />
      </>
 

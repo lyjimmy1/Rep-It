@@ -21,10 +21,10 @@ const ExercisesContainer = () =>{
                         <th>Get your pump in!</th>
                     </tr>
                 </thead>
-                <tbody className="exerciseTbody">
-                    {exercises.map(exercise =>
-                    <NavLink to={`/api/exercises/${exercise.id}`} key={exercise.name}>{exercise.name}</NavLink>)}
-                </tbody>
+                    <tbody className="exerciseTbody">
+                        {exercises.map(exercise =>
+                        <NavLink to={`/api/exercises/${exercise.id}`} key={exercise.name}>{exercise.name}</NavLink>)}
+                    </tbody>
             </table>
         </div>
     )

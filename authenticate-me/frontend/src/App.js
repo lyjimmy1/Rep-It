@@ -6,10 +6,12 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ExercisesContainer from "./components/Exercise/ExercisesContainer"
 import Exercise from "./components/Exercise/Exercise"
+import CreateExerciseForm from "./components/Exercise/ExerciseForm"
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -23,11 +25,14 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/api/exercises">
+          <Route path="/api/exercises" exact>
             <ExercisesContainer />
           </Route>
           <Route path="/api/exercises/:id" exact>
             <Exercise />
+          </Route>
+          <Route path="/api/exercises/new" exact>
+            <CreateExerciseForm />
           </Route>
         </Switch>
       )}
