@@ -19,9 +19,9 @@ const CreateExerciseForm = ()=>{
         e.preventDefault();
     }
     return (
-        <div>
-            <h1>Make An Exercise!</h1>
-            <form onSubmit={handleSubmit}>
+        <div> hey pls work
+            <h2>Make An Exercise!</h2>
+            {/* <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='name'>Name</label>
                     <input
@@ -55,7 +55,7 @@ const CreateExerciseForm = ()=>{
                     value={reps}/>
                 </div>
                 <button>Submit</button>
-            </form>
+            </form> */}
         </div>
     )
 }
