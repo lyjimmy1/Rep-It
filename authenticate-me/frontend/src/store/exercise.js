@@ -1,5 +1,5 @@
 import { csrfFetch } from "./csrf";
-
+import {useParams} from 'react-router-dom'
 //define action types as constants
 const SET_EXERCISES = 'exercises/SET_EXERCISES'
 
@@ -14,6 +14,13 @@ export const getExercises = () => async (dispatch) => {
     const exercises = await res.json();
     // console.log(exercises)
     dispatch(setExercises(exercises));
+}
+
+export const getExercise = ()=> async(dispatch)=>{
+    const {id} = useParams()
+    const res = await csrfFetch(`/api/exercises/:${id}`)
+    const exercise = await res.json()
+    dispatch(setExercises(exercise))
 }
 //define an initial state
 const initialState = {}
