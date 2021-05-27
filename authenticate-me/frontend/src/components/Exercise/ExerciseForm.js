@@ -15,6 +15,7 @@ const CreateExerciseForm=()=>{
     const [description, setDescription] = useState("");
     const [sets, setSets] = useState(0);
     const [reps, setReps] = useState(0);
+    const [bodyType, setBodyType]=useState(0)
 
     // useEffect(() => {
     //     dispatch(makeExercise());
@@ -45,7 +46,8 @@ const CreateExerciseForm=()=>{
                     placeholder='Name'
                     type='text'
                     onChange={(e) => setName(e.target.value)}
-                    value={name}/>
+                    value={name}
+                    required/>
                 </div>
                 <div>
                     <label htmlFor='description'>Description</label>
@@ -53,7 +55,8 @@ const CreateExerciseForm=()=>{
                     id='description'
                     type='text'
                     onChange={(e) => setDescription(e.target.value)}
-                    value={description}/>
+                    value={description}
+                    required/>
                 </div>
                 <div>
                     <label htmlFor='sets'>Sets</label>
@@ -61,7 +64,8 @@ const CreateExerciseForm=()=>{
                     id='sets'
                     type='number'
                     onChange={(e) => setSets(e.target.value)}
-                    value={sets}/>
+                    value={sets}
+                    required/>
                 </div>
                 <div>
                     <label htmlFor='reps'>Reps</label>
@@ -69,15 +73,17 @@ const CreateExerciseForm=()=>{
                     id='reps'
                     type='number'
                     onChange={(e) => setReps(e.target.value)}
-                    value={reps}/>
+                    value={reps}
+                    required/>
                 </div>
                 <div>
-                    <select id="bodypart"> Body Part
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                    <select id="bodypart" onChange={(e) => setBodyType(e.target.value)} required> Body Part
+                        <option value={0}>--Pick a Body Region--</option>
+                        <option value={1}>Chest</option>
+                        <option value={2}>Shoulders</option>
+                        <option value={3}>Arms</option>
+                        <option value={4}>Legs</option>
+                        <option value={5}>Accessories</option>
                     </select>
                 </div>
                 <button>Submit</button>
