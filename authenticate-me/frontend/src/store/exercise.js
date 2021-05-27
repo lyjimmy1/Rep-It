@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 const SET_EXERCISES = 'exercises/SET_EXERCISES'
 const ADD_EXERCISE = 'exercise/ADD_EXERCISE'
 const REMOVE_EXERCISE = 'exercise/REMOVE_EXERCISE'
+const UPDATE_EXERCISE = 'exercise/UPDATE_EXERCISE'
 //define action creators
 const setExercises = (exercises) => ({
     type: SET_EXERCISES,
@@ -20,12 +21,24 @@ const removeExercise = (id) => ({
     id,
 });
 
+const updateOne = (exercise)=>({
+    type: UPDATE_EXERCISE,
+    exercise
+})
+
 //define thunks
 export const getExercises = () => async (dispatch) => {
     const res = await csrfFetch('/api/exercises');
     const exercises = await res.json();
     // console.log(exercises)
     dispatch(setExercises(exercises));
+}
+
+export const getOneExercise = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/exercises/${id}`);
+    const exercise = await res.json();
+    // console.log(exercises)
+    dispatch(addExercise(exercise));
 }
 
 export const makeExercise =(exercise)=>async (dispatch) =>{
@@ -51,6 +64,23 @@ export const deleteExercise = (id) =>async (dispatch) =>{
     if(res.ok){
         const exercise= await res.json();
         dispatch(removeExercise(exercise.id))
+    }
+}
+
+export const updateExercise = (data) =>async(dispatch) =>{
+    console.log(data)
+    const res = await csrfFetch(`/api/exercises/${data.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    if (res.ok){
+        const exercise = await res.json()
+        console.log(exercise)
+        dispatch(updateOne(exercise))
+        return exercise
     }
 }
 
@@ -84,6 +114,12 @@ const exerciseReducer = (state = initialState, action) =>{
             const removedExercise = {...state}
             delete removedExercise[action.id]
             return removedExercise;
+        }
+        case UPDATE_EXERCISE:{
+            return{
+                ...state,
+                [action.exercise.id]: action.exercise,
+            }
         }
         default:
             return state;

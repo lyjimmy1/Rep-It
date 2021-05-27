@@ -1,8 +1,9 @@
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getExercises} from '../../store/exercise'
+import {getExercises, getOneExercise} from '../../store/exercise'
 import { NavLink, useParams } from 'react-router-dom';
 import DeleteExercise from "../DeleteExercise/Delete"
+import UpdateExercise from "../UpdateExercise/Update"
 
 const Exercise=()=>{
     const dispatch = useDispatch();
@@ -11,11 +12,15 @@ const Exercise=()=>{
     // const bodyRegions = useSelector((state)=>(state.bodyregions));
     // const reviews = exercises[id].Reviews
     // console.log(reviews)
-    console.log(exercises)
+    // console.log(exercises)
     useEffect(() => {
         dispatch(getExercises());
         // dispatch(getBodyRegions());
     }, [dispatch]);
+
+    useEffect(()=>{
+        dispatch(getOneExercise(id))
+    }, [dispatch, id])
 
     return(
         <>
@@ -42,6 +47,9 @@ const Exercise=()=>{
                 </div>
                 <div className="deleteDiv">
                     <DeleteExercise />
+                </div>
+                <div className="updateDiv">
+                    <NavLink to={`/api/exercises/edit/${id}`}>Update</NavLink>
                 </div>
             </div>
         </div>

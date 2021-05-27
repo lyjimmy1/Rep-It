@@ -9,6 +9,7 @@ import Exercise from "./components/Exercise/Exercise"
 import CreateExerciseForm from "./components/Exercise/ExerciseForm"
 import Review from "./components/Review/review"
 import DeleteExercise from "./components/DeleteExercise/Delete"
+import UpdateExercise from "./components/UpdateExercise/Update"
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,9 @@ function App() {
           <Route path="/api/exercises/:id" exact>
             <Exercise />
             <Review />
+          </Route>
+          <Route path="/api/exercises/edit/:id">
+            <UpdateExercise />
           </Route>
         </Switch>
       )}

@@ -41,11 +41,14 @@ router.delete("/:id", asyncHandler(async (req, res) =>{
 router.put("/:id", asyncHandler(async(req, res) =>{
     const {user_id, name, description, sets, reps, body_region_id} = req.body;
 
-    const exerciseId = parseInt(req.params.id);
+    const exerciseId = req.params.id;
+    console.log(exerciseId)
     const exercise = await Exercise.findByPk(exerciseId)
+    console.log(exercise)
 
     if(exercise){
         await exercise.update({
+            name: name,
             description: description,
             sets: sets,
             reps: reps,

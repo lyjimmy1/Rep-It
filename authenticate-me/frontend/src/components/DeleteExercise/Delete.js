@@ -11,10 +11,10 @@ const DeleteExercise=()=>{
     const history = useHistory();
 
     const deleteEvent = async(e)=>{
-        e.preventDefault();
+        e.preventDefault()
 
         const deletedExercise = await dispatch(deleteExercise(id))
-        history.push('/')
+        history.go('/')
 
 
     }

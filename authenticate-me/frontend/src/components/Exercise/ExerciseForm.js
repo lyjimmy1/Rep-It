@@ -12,9 +12,9 @@ const CreateExerciseForm=()=>{
     const [user_id, setUserId] = useState(1)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [sets, setSets] = useState(0);
-    const [reps, setReps] = useState(0);
-    const [body_region_id, setBodyTypeId]=useState(0)
+    const [sets, setSets] = useState(null);
+    const [reps, setReps] = useState(null);
+    const [body_region_id, setBodyTypeId]=useState(null)
 
     // useEffect(() => {
     //     dispatch(makeExercise());
