@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {makeExercise} from '../../store/exercise'
-import * as exerciseActions from '../../store/exercise'
 import {useHistory} from 'react-router-dom'
 
 

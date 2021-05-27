@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getExercises} from '../../store/exercise'
 import { NavLink } from 'react-router-dom';
 import './exercise.css'
+import DeleteExercise from "../DeleteExercise/Delete"
 
 const ExercisesContainer = () =>{
     const dispatch = useDispatch();

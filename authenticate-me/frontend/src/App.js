@@ -8,6 +8,7 @@ import ExercisesContainer from "./components/Exercise/ExercisesContainer"
 import Exercise from "./components/Exercise/Exercise"
 import CreateExerciseForm from "./components/Exercise/ExerciseForm"
 import Review from "./components/Review/review"
+import DeleteExercise from "./components/DeleteExercise/Delete"
 
 function App() {
   const dispatch = useDispatch();

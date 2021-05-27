@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getExercises} from '../../store/exercise'
 import { NavLink, useParams } from 'react-router-dom';
+import DeleteExercise from "../DeleteExercise/Delete"
 
 const Exercise=()=>{
     const dispatch = useDispatch();
@@ -38,6 +39,9 @@ const Exercise=()=>{
                 </div>
                 <div className="userName">
                     Posted-by:{exercises[id].User.username}
+                </div>
+                <div className="deleteDiv">
+                    <DeleteExercise />
                 </div>
             </div>
         </div>
