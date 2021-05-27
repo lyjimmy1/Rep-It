@@ -16,17 +16,17 @@ const ExercisesContainer = () =>{
 
     return (
         <div className="exercisePage">
-            <table className="exerciseTable">
-                <thead className="exerciseThead">
-                    <tr>
-                        <th>Get your pump in!</th>
-                    </tr>
-                </thead>
-                    <tbody className="exerciseTbody">
+            <div className="exerciseTable">
+                <div className="exerciseThead">
+                    <div>
+                        <h1>Get your pump in!</h1>
+                    </div>
+                </div>
+                    <div className="exerciseTbody">
                         {exercises.map(exercise =>
                         <NavLink to={`/api/exercises/${exercise.id}`} key={exercise.name}>{exercise.name}</NavLink>)}
-                    </tbody>
-            </table>
+                    </div>
+            </div>
         </div>
     )
 }
