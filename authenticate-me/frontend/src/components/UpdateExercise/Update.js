@@ -1,13 +1,13 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {updateExercise} from '../../store/exercise'
-import { NavLink, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const UpdateExercise=()=>{
     const dispatch = useDispatch();
     const {id} = useParams()
     const exercises = useSelector(state => state.exercises[id])
-    console.log(exercises)
+    // console.log(exercises)
     const history = useHistory();
 
     const [user_id, setUserId] = useState(1)
@@ -31,6 +31,8 @@ const UpdateExercise=()=>{
     }
 
     return(
+        <>
+        {exercises &&
         <div>
         <h2>Edit An Exercise!</h2>
         <form onSubmit={handleSubmit}>
@@ -84,6 +86,8 @@ const UpdateExercise=()=>{
             <button>Submit</button>
         </form>
     </div>
+    }
+    </>
     )
 
 }

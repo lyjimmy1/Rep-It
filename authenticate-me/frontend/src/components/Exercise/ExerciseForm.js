@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import {useState} from 'react'
+import {useDispatch} from 'react-redux'
 import {makeExercise} from '../../store/exercise'
 import {useHistory} from 'react-router-dom'
 
@@ -12,9 +12,9 @@ const CreateExerciseForm=()=>{
     const [user_id, setUserId] = useState(1)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [sets, setSets] = useState(null);
-    const [reps, setReps] = useState(null);
-    const [body_region_id, setBodyTypeId]=useState(null)
+    const [sets, setSets] = useState(0);
+    const [reps, setReps] = useState(0);
+    const [body_region_id, setBodyTypeId]=useState(0)
 
     // useEffect(() => {
     //     dispatch(makeExercise());

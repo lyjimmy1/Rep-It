@@ -1,7 +1,7 @@
-import {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+
+import {useDispatch} from 'react-redux'
 import {deleteExercise} from '../../store/exercise'
-import { NavLink, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 
 
@@ -14,7 +14,7 @@ const DeleteExercise=()=>{
         e.preventDefault()
 
         const deletedExercise = await dispatch(deleteExercise(id))
-        history.go('/')
+        history.push('/')
 
 
     }

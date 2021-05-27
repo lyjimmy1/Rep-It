@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch, useParams } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -8,7 +8,6 @@ import ExercisesContainer from "./components/Exercise/ExercisesContainer"
 import Exercise from "./components/Exercise/Exercise"
 import CreateExerciseForm from "./components/Exercise/ExerciseForm"
 import Review from "./components/Review/review"
-import DeleteExercise from "./components/DeleteExercise/Delete"
 import UpdateExercise from "./components/UpdateExercise/Update"
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
             <Exercise />
             <Review />
           </Route>
-          <Route path="/api/exercises/edit/:id">
+          <Route path="/api/exercises/:id/edit" exact >
             <UpdateExercise />
           </Route>
         </Switch>

@@ -1,5 +1,4 @@
 import { csrfFetch } from "./csrf";
-import {useParams} from 'react-router-dom'
 //define action types as constants
 const SET_EXERCISES = 'exercises/SET_EXERCISES'
 const ADD_EXERCISE = 'exercise/ADD_EXERCISE'

@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getExercises} from '../../store/exercise'
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Review=()=>{
     const dispatch = useDispatch();

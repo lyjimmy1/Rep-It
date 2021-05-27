@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getExercises, getOneExercise} from '../../store/exercise'
 import { NavLink, useParams } from 'react-router-dom';
 import DeleteExercise from "../DeleteExercise/Delete"
-import UpdateExercise from "../UpdateExercise/Update"
+
 
 const Exercise=()=>{
     const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const Exercise=()=>{
                     <DeleteExercise />
                 </div>
                 <div className="updateDiv">
-                    <NavLink to={`/api/exercises/edit/${id}`}>Update</NavLink>
+                    <NavLink to={`/api/exercises/${id}/edit`}>Update</NavLink>
                 </div>
             </div>
         </div>
