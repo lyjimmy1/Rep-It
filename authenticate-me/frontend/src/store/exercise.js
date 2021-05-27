@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 //define action types as constants
 const SET_EXERCISES = 'exercises/SET_EXERCISES'
 const ADD_EXERCISE = 'exercise/ADD_EXERCISE'
+const REMOVE_EXERCISE = 'exercise/REMOVE_EXERCISE'
 //define action creators
 const setExercises = (exercises) => ({
     type: SET_EXERCISES,
@@ -13,6 +14,12 @@ const addExercise = (exercise) => ({
     type: ADD_EXERCISE,
     exercise,
 });
+
+const removeExercise = (id) => ({
+    type: REMOVE_EXERCISE,
+    id,
+});
+
 //define thunks
 export const getExercises = () => async (dispatch) => {
     const res = await csrfFetch('/api/exercises');
@@ -37,6 +44,16 @@ export const makeExercise =(exercise)=>async (dispatch) =>{
     }
 }
 
+export const deleteExercise = (id) =>async (dispatch) =>{
+    const res= await csrfFetch(`/api/exercises/${id}`, {
+        method: 'DELETE',
+    });
+    if(res.ok){
+        const exercise= await res.json();
+        dispatch(removeExercise(exercise.id))
+    }
+}
+
 // export const getExercise = ()=> async(dispatch)=>{
 //     const {id} = useParams()
 //     const res = await csrfFetch(`/api/exercises/:${id}`)
@@ -57,11 +74,16 @@ const exerciseReducer = (state = initialState, action) =>{
             return newState;
         }
         case ADD_EXERCISE:{
-            console.log(action.exercise)
+            // console.log(action.exercise)
             return{
                 ...state,
                [action.exercise.id]: action.exercise
             }
+        };
+        case REMOVE_EXERCISE: {
+            const removedExercise = {...state}
+            delete removedExercise[action.id]
+            return removedExercise;
         }
         default:
             return state;

@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getExercises} from '../../store/exercise'
-import {getBodyRegions} from '../../store/bodyregion'
 import { NavLink, useParams } from 'react-router-dom';
 
 const Exercise=()=>{
@@ -36,6 +35,9 @@ const Exercise=()=>{
                 </div>
                 <div className="bodyRegion">
                     Body-Type:{exercises[id].Bodyregion.body_type}
+                </div>
+                <div className="userName">
+                    Posted-by:{exercises[id].User.username}
                 </div>
             </div>
         </div>

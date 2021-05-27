@@ -10,12 +10,12 @@ const CreateExerciseForm=()=>{
     const dispatch = useDispatch();
     // const exercises = useSelector(state => state.exercise)
     // console.log(exercises)
-    const [user_id, setUserId] = useState(0)
+    const [user_id, setUserId] = useState(1)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [sets, setSets] = useState(0);
     const [reps, setReps] = useState(0);
-    const [bodyType, setBodyType]=useState(0)
+    const [body_region_id, setBodyTypeId]=useState(0)
 
     // useEffect(() => {
     //     dispatch(makeExercise());
@@ -25,12 +25,12 @@ const CreateExerciseForm=()=>{
         e.preventDefault();
 
         const payload ={
-            user_id:user_id, name, description, sets, reps
+           user_id, name, description, sets, reps, body_region_id
         }
 
         const newExercise = await dispatch(makeExercise(payload))
         if(newExercise){
-            return history.pushState("/api/exercises")
+            return history.push("/api/exercises")
         }
     }
 
@@ -77,7 +77,7 @@ const CreateExerciseForm=()=>{
                     required/>
                 </div>
                 <div>
-                    <select id="bodypart" onChange={(e) => setBodyType(e.target.value)} required> Body Part
+                    <select id="bodypart" onChange={(e) => setBodyTypeId(e.target.value)} required> Body Part
                         <option value={0}>--Pick a Body Region--</option>
                         <option value={1}>Chest</option>
                         <option value={2}>Shoulders</option>

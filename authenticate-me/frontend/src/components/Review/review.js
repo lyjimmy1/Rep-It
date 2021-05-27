@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getExercises} from '../../store/exercise'
-import {getBodyRegions} from '../../store/bodyregion'
 import { NavLink, useParams } from 'react-router-dom';
 
 const Review=()=>{
