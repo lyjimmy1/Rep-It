@@ -6,6 +6,7 @@ import {makeExercise} from '../../store/exercise'
 const CreateExerciseForm=()=>{
     const dispatch = useDispatch();
     const exercises = useSelector(state => state.exercise)
+    console.log(exercises)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [sets, setSets] = useState(0);
@@ -17,22 +18,32 @@ const CreateExerciseForm=()=>{
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const payload ={
+            name, description, sets, reps
+        }
+
+        const newExercise = await dispatch(makeExercise(payload))
+        console.log(newExercise)
     }
+
+
     return (
         <div> hey pls work
             <h2>Make An Exercise!</h2>
-            {/* <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='name'>Name</label>
                     <input
                     id='name'
+                    placeholder='Name'
                     type='text'
                     onChange={(e) => setName(e.target.value)}
                     value={name}/>
                 </div>
                 <div>
                     <label htmlFor='description'>Description</label>
-                    <input
+                    <textarea
                     id='description'
                     type='text'
                     onChange={(e) => setDescription(e.target.value)}
@@ -55,7 +66,7 @@ const CreateExerciseForm=()=>{
                     value={reps}/>
                 </div>
                 <button>Submit</button>
-            </form> */}
+            </form>
         </div>
     )
 }

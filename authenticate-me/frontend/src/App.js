@@ -28,10 +28,10 @@ function App() {
           <Route path="/api/exercises" exact>
             <ExercisesContainer />
           </Route>
-          <Route path="/api/exercises/:id" exact>
+          <Route path="/api/exercises/new" exact>
             <CreateExerciseForm />
           </Route>
-          <Route path="/api/exercises/new" exact>
+          <Route path="/api/exercises/:id" exact>
             <Exercise />
           </Route>
         </Switch>
