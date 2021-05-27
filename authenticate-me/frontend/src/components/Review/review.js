@@ -4,14 +4,14 @@ import {getExercises} from '../../store/exercise'
 import {getBodyRegions} from '../../store/bodyregion'
 import { NavLink, useParams } from 'react-router-dom';
 
-const Exercise=()=>{
+const Review=()=>{
     const dispatch = useDispatch();
     const {id} = useParams()
     const exercises = useSelector((state)=> (state.exercises));
-    // const bodyRegions = useSelector((state)=>(state.bodyregions));
     // const reviews = exercises[id].Reviews
+    // const users = exercises[id].User
     // console.log(reviews)
-    console.log(exercises)
+
     useEffect(() => {
         dispatch(getExercises());
         // dispatch(getBodyRegions());
@@ -22,20 +22,10 @@ const Exercise=()=>{
         {exercises[id] &&
         <div className="exercisePage">
             <div className="exerciseTable">
-                <h1 className="exerciseThead">
-                    {exercises[id].name}
-                </h1>
-                <div className="exerciseTbody">
-                    {exercises[id].description}
-                </div>
-                <div className="exerciseSets">
-                    Sets:{exercises[id].sets}
-                </div>
-                <div className="exerciseReps">
-                    Reps:{exercises[id].reps}
-                </div>
-                <div className="bodyRegion">
-                    Body-Type:{exercises[id].Bodyregion.body_type}
+                <h2>Reviews from Other Users!</h2>
+                <div className="reviews">
+                    {exercises[id].Reviews.map(review=>
+                        <p>{exercises[id].User.username}: {review.comments}, @ {review.createdAt}</p>)}
                 </div>
             </div>
         </div>
@@ -43,5 +33,4 @@ const Exercise=()=>{
         </>
     )
 }
-
-export default Exercise
+export default Review

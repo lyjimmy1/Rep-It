@@ -1,30 +1,36 @@
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {makeExercise} from '../../store/exercise'
+import * as exerciseActions from '../../store/exercise'
+import {useHistory} from 'react-router-dom'
 
 
 const CreateExerciseForm=()=>{
+    const history = useHistory();
     const dispatch = useDispatch();
-    const exercises = useSelector(state => state.exercise)
-    console.log(exercises)
+    // const exercises = useSelector(state => state.exercise)
+    // console.log(exercises)
+    const [user_id, setUserId] = useState(0)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [sets, setSets] = useState(0);
     const [reps, setReps] = useState(0);
 
-    useEffect(() => {
-        dispatch(makeExercise());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(makeExercise());
+    // }, [dispatch]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const payload ={
-            name, description, sets, reps
+            user_id:user_id, name, description, sets, reps
         }
 
         const newExercise = await dispatch(makeExercise(payload))
-        console.log(newExercise)
+        if(newExercise){
+            return history.pushState("/api/exercises")
+        }
     }
 
 
@@ -64,6 +70,15 @@ const CreateExerciseForm=()=>{
                     type='number'
                     onChange={(e) => setReps(e.target.value)}
                     value={reps}/>
+                </div>
+                <div>
+                    <select id="bodypart"> Body Part
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
                 </div>
                 <button>Submit</button>
             </form>

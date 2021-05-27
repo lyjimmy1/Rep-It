@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import ExercisesContainer from "./components/Exercise/ExercisesContainer"
 import Exercise from "./components/Exercise/Exercise"
 import CreateExerciseForm from "./components/Exercise/ExerciseForm"
+import Review from "./components/Review/review"
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
           </Route>
           <Route path="/api/exercises/:id" exact>
             <Exercise />
+            <Review />
           </Route>
         </Switch>
       )}

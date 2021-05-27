@@ -8,14 +8,14 @@ const { Exercise, Bodyregion, User, Review, Sequlize } = require('../../db/model
 
 //CRUD: read all exercises
 router.get("/", asyncHandler(async (req, res) =>{
-    const exercises = await Exercise.findAll({include: Bodyregion})
+    const exercises = await Exercise.findAll({include: {all:true}})
     res.json(exercises)
 }))
 
 //CRUD: read exercise by id
 router.get("/:id/", asyncHandler(async (req, res) =>{
     const exerciseId = parseInt(req.params.id)
-    const exercise = await Exercise.findByPk(exerciseId)
+    const exercise = await Exercise.findByPk(exerciseId, {include: {all:true}})
     return res.json(exercise)
 }))
 

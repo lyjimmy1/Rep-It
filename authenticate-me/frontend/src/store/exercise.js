@@ -31,8 +31,9 @@ export const makeExercise =(exercise)=>async (dispatch) =>{
     })
     if(res.ok){
         const newExercise = await res.json()
+        // res.send(newExercise)
         dispatch(addExercise(newExercise))
-        return newExercise
+        return newExercise.exercise
     }
 }
 
@@ -53,15 +54,13 @@ const exerciseReducer = (state = initialState, action) =>{
             action.exercises.forEach((exercise) =>{
                 newState[exercise.id] = exercise;
             });
-            return {
-                ...newState,
-                ...state};
+            return newState;
         }
         case ADD_EXERCISE:{
             console.log(action.exercise)
             return{
                 ...state,
-                exercises: [...state.exercises, action.exercise]
+               [action.exercise.id]: action.exercise
             }
         }
         default:
