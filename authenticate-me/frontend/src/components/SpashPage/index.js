@@ -11,7 +11,7 @@ function Homepage(){
         <div className="bg-img img4"></div>
         <div className="bg-img img5"></div>
 
-        <div class="bg-text">REP-IT</div>
+        <div className="img6"></div>
     </div>
 
     )
