@@ -26,7 +26,6 @@
 .signup-container{
     display: flex;
     background-color:  white;
-    border: 5px solid black;
     border-radius: 20px;
     flex-direction: column;
     align-items: center;
