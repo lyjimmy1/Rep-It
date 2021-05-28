@@ -33,59 +33,63 @@ const UpdateExercise=()=>{
     return(
         <>
         {exercises &&
-        <div>
-        <h2>Edit An Exercise!</h2>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor='name'>Name</label>
-                <input
-                id='name'
-                placeholder='Name'
-                type='text'
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                required/>
+        <div className ="outermost-container">
+
+            <div className="signup-container">
+            <h2>Edit An Exercise!</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor='name'>Name</label>
+                    <input className="signup-input"
+                    id='name'
+                    placeholder='Name'
+                    type='text'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    required/>
+                </div>
+                <div>
+                    <label htmlFor='description'>Description</label>
+                    <textarea className="signup-input"
+                    id='description'
+                    type='text'
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                    required/>
+                </div>
+                <div>
+                    <label htmlFor='sets'>Sets</label>
+                    <input className="signup-input"
+                    id='sets'
+                    type='number'
+                    onChange={(e) => setSets(e.target.value)}
+                    value={sets}
+                    required/>
+                </div>
+                <div>
+                    <label htmlFor='reps'>Reps</label>
+                    <input className="signup-input"
+                    id='reps'
+                    type='number'
+                    onChange={(e) => setReps(e.target.value)}
+                    value={reps}
+                    required/>
+                </div>
+                <div>
+                    <select id="bodypart" onChange={(e) => setBodyTypeId(e.target.value)} required> Body Part
+                        <option value={0}>--Pick a Body Region--</option>
+                        <option value={1}>Chest</option>
+                        <option value={2}>Shoulders</option>
+                        <option value={3}>Arms</option>
+                        <option value={4}>Legs</option>
+                        <option value={5}>Accessories</option>
+                    </select>
+                </div>
+                <button>Update</button>
+            </form>
             </div>
-            <div>
-                <label htmlFor='description'>Description</label>
-                <textarea
-                id='description'
-                type='text'
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-                required/>
-            </div>
-            <div>
-                <label htmlFor='sets'>Sets</label>
-                <input
-                id='sets'
-                type='number'
-                onChange={(e) => setSets(e.target.value)}
-                value={sets}
-                required/>
-            </div>
-            <div>
-                <label htmlFor='reps'>Reps</label>
-                <input
-                id='reps'
-                type='number'
-                onChange={(e) => setReps(e.target.value)}
-                value={reps}
-                required/>
-            </div>
-            <div>
-                <select id="bodypart" onChange={(e) => setBodyTypeId(e.target.value)} required> Body Part
-                    <option value={0}>--Pick a Body Region--</option>
-                    <option value={1}>Chest</option>
-                    <option value={2}>Shoulders</option>
-                    <option value={3}>Arms</option>
-                    <option value={4}>Legs</option>
-                    <option value={5}>Accessories</option>
-                </select>
-            </div>
-            <button>Update</button>
-        </form>
-    </div>
+
+        </div>
     }
     </>
     )

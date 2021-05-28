@@ -36,10 +36,10 @@ body, html {
 
 .bg-text {
     background-color: rgb(0,0,0);
-    background-color: rgba(7, 84, 209, 0.4);
+    background-color: rgba(7, 84, 209, 0.3);
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 80px;
+    font-size: 90px;
     border: 10px solid #0a0a0a;
     position: fixed;
     top: 50%;

@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(211, 233, 240);
+}
+
+
 .exercisePage{
     width: 75%;
     margin: auto;
@@ -24,4 +29,8 @@
    border-radius: 0.20rem;
    flex-direction: column;
    justify-content: space-between;
+}
+
+#comment-text-area{
+    height:4rem;
 }
