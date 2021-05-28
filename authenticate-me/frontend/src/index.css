@@ -1,58 +1,21 @@
 /* TODO Add site wide styles */
 #root{
-    z-index: -2;
-    /* background-image: url('./images/dumbell-on-floor.jpg');
-    background-size: cover; */
+    height:100vh;
+    width: 100vw;
+
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.bg-image {
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index:1;
-}
-
-
-.img1 {
-    background-image: url('./images/dumbell-on-floor.jpg');
-}
-.img2 {
-    background-image: url("./images/man-curling.jpg");
-}
-.img3 {
-    background-image: url("./images/work-out-in-a-gym-in-a-mask-sunday-edit.jpg");
-}
-.img4 {
-    background-image: url("./images/girl-cleaning-weight.jpg")
-}
-.img5 {
-    background-image: url("./images/woman-smiling-jump-rope.jpg")
-}
-
-  /* Position text in the middle of the page/image */
-.bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(7, 84, 209, 0.4); /* Black w/opacity/see-through */
-    color: white;
+.bg-text{
+    background-color: rgb(0,0,0);
+    background-color: rgba(7, 84, 209, 0.4);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 80px;
-    border: 10px solid #f1f1f1;
-    position: fixed; /* Stay fixed */
+    border: 10px solid #0a0a0a;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
     width: 500px;
     padding: 20px;
     text-align: center;

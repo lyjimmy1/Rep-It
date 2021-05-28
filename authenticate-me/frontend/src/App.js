@@ -9,7 +9,7 @@ import Exercise from "./components/Exercise/Exercise"
 import CreateExerciseForm from "./components/Exercise/ExerciseForm"
 import Review from "./components/Review/review"
 import UpdateExercise from "./components/UpdateExercise/Update"
-
+import Homepage from "./components/SpashPage/index"
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,6 +24,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path="/" exact>
+            <Homepage />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
