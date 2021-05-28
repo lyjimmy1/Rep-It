@@ -10,8 +10,9 @@ function Homepage(){
         <div className="bg-img img3"></div>
         <div className="bg-img img4"></div>
         <div className="bg-img img5"></div>
+        <div className="bg-img img6"></div>
 
-        <div className="img6"></div>
+        <div className="img7"></div>
     </div>
 
     )

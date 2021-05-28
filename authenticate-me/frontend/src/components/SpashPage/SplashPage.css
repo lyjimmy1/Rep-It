@@ -26,6 +26,10 @@
 }
 
 .img6{
+    background-image:url("../../images/guy-running-in-place.jpg")
+}
+
+.img7{
     background-image: url("../../images/rep-logo.png");
     position: fixed;
     top: 50%;
