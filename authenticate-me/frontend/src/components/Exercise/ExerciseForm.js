@@ -35,7 +35,7 @@ const CreateExerciseForm=()=>{
 
 
     return (
-        <div> hey pls work
+        <div> 
             <h2>Make An Exercise!</h2>
             <form onSubmit={handleSubmit}>
                 <div>

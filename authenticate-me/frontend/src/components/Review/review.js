@@ -24,7 +24,7 @@ const Review=()=>{
                 <h2>Reviews from Other Users!</h2>
                 <div className="reviews">
                     {exercises[id].Reviews.map(review=>
-                        <p>{exercises[id].User.username}: {review.comments}, @ {review.createdAt}</p>)}
+                        <p>{exercises[id].User.username}: {review.comments}</p>)}
                 </div>
             </div>
         </div>

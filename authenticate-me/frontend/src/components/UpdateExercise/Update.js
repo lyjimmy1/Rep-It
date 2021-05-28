@@ -83,7 +83,7 @@ const UpdateExercise=()=>{
                     <option value={5}>Accessories</option>
                 </select>
             </div>
-            <button>Submit</button>
+            <button>Update</button>
         </form>
     </div>
     }
