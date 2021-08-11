@@ -29,14 +29,14 @@ const updateOne = (exercise)=>({
 export const getExercises = () => async (dispatch) => {
     const res = await csrfFetch('/api/exercises');
     const exercises = await res.json();
-    // console.log(exercises)
+
     dispatch(setExercises(exercises));
 }
 
 export const getOneExercise = (id) => async (dispatch) => {
     const res = await csrfFetch(`/api/exercises/${id}`);
     const exercise = await res.json();
-    // console.log(exercises)
+
     dispatch(addExercise(exercise));
 }
 
@@ -67,7 +67,7 @@ export const deleteExercise = (id) =>async (dispatch) =>{
 }
 
 export const updateExercise = (data) =>async(dispatch) =>{
-    console.log(data)
+
     const res = await csrfFetch(`/api/exercises/${data.id}`, {
         method: 'PUT',
         headers: {
@@ -77,7 +77,7 @@ export const updateExercise = (data) =>async(dispatch) =>{
     })
     if (res.ok){
         const exercise = await res.json()
-        console.log(exercise)
+
         dispatch(updateOne(exercise))
         return exercise
     }
@@ -87,7 +87,7 @@ export const updateExercise = (data) =>async(dispatch) =>{
 //     const {id} = useParams()
 //     const res = await csrfFetch(`/api/exercises/:${id}`)
 //     const exercise = await res.json()
-//     console.log(exercise)
+//
 //     dispatch(setExercise(exercise))
 // }
 //define an initial state
@@ -103,7 +103,6 @@ const exerciseReducer = (state = initialState, action) =>{
             return newState;
         }
         case ADD_EXERCISE:{
-            // console.log(action.exercise)
             return{
                 ...state,
                [action.exercise.id]: action.exercise

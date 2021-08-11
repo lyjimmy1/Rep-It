@@ -2,7 +2,7 @@ import './SplashPage.css'
 
 
 function Homepage(){
-    console.log('Homepagehello')
+    
     return(
     <div className="bg-img">
         <div className="bg-img img1"></div>

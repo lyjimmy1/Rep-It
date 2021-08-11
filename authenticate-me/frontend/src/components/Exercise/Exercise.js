@@ -11,8 +11,7 @@ const Exercise=()=>{
     const exercises = useSelector((state)=> (state.exercises));
     // const bodyRegions = useSelector((state)=>(state.bodyregions));
     // const reviews = exercises[id].Reviews
-    // console.log(reviews)
-    // console.log(exercises)
+
     useEffect(() => {
         dispatch(getExercises());
         // dispatch(getBodyRegions());

@@ -8,7 +8,7 @@ const CreateExerciseForm=()=>{
     const history = useHistory();
     const dispatch = useDispatch();
     // const exercises = useSelector(state => state.exercise)
-    // console.log(exercises)
+    
     const [user_id, setUserId] = useState(1)
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");

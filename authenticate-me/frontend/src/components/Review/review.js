@@ -9,7 +9,7 @@ const Review=()=>{
     const exercises = useSelector((state)=> (state.exercises));
     // const reviews = exercises[id].Reviews
     // const users = exercises[id].User
-    // console.log(reviews)
+    
 
     useEffect(() => {
         dispatch(getExercises());

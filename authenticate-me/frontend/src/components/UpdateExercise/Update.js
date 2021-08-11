@@ -7,7 +7,7 @@ const UpdateExercise=()=>{
     const dispatch = useDispatch();
     const {id} = useParams()
     const exercises = useSelector(state => state.exercises[id])
-    // console.log(exercises)
+   
     const history = useHistory();
 
     const [user_id, setUserId] = useState(1)
