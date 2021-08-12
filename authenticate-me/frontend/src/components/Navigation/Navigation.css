@@ -18,3 +18,12 @@
     font-size: 16px;
     border-radius: 10px;
 }
+
+.logo-container{
+   height: 2rem;
+}
+
+.logo-img{
+    width: 16.938rem;
+    transform: translate(-75%, -25%);
+}
