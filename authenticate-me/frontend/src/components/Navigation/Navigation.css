@@ -1,7 +1,6 @@
 .navBar {
-    border: 2px solid teal;
-    border-radius: 10px;
-    background-color:lightblue;
+    border: 1px solid teal;
+    background-color:whitesmoke;
 }
 
 .navItems{
@@ -18,5 +17,4 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
-
 }
