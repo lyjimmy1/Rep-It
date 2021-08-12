@@ -66,12 +66,14 @@
     margin-bottom: 1em;
 }
 
-.splash-footer-container h2{
-    display: flex;
-    justify-self: center;
+.splash-footer-container{
     padding-bottom: 5px;
 }
 
+.splash-header{
+    color:rgb(187, 8, 8);
+    text-align: center;
+}
 
 .splash-footer-img-container{
     height: auto;
@@ -80,12 +82,16 @@
 
 .splash-footer-img-box{
     height: 11.594rem;
-    width: 10.875rem;
+    width: 12rem;
     margin: 0 2em 0 2em;
 }
 
+.splash-footer-img-box p{
+    text-align: center;
+}
+
 .splash-footer-img{
-    height: 80%;
-    width: 110%;
+    height: 90%;
+    width: 100%;
     border-radius: 4px 4px 0 0;
 }

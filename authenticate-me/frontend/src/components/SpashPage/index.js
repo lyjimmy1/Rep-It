@@ -16,7 +16,7 @@ function Homepage(){
         </div>
         <div className="splash-footer">
             <div className="splash-footer-container">
-                <h2 className="splash-header">
+                <h2 className="splash-header" color="red">
                     Find the Best Exercise for You
                 </h2>
                 <div className="splash-footer-img-container">
@@ -34,7 +34,7 @@ function Homepage(){
                     </div>
                     <div className="splash-footer-img-box">
                         <img className="splash-footer-img" src={plank}/>
-                        <p>Running Planks</p>
+                        <p>Running Plank</p>
                     </div>
                 </div>
             </div>
