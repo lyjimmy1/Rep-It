@@ -83,7 +83,7 @@
 .splash-footer-img-box{
     height: 11.594rem;
     width: 12rem;
-    margin: 0 2em 0 2em;
+    margin: 0 4em 0 4em;
 }
 
 .splash-footer-img-box p{
@@ -92,6 +92,7 @@
 
 .splash-footer-img{
     height: 90%;
-    width: 100%;
+    width: auto;
     border-radius: 4px 4px 0 0;
+    image-rendering: auto;
 }

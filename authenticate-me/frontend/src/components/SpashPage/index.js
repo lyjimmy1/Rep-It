@@ -11,13 +11,13 @@ function Homepage(){
     <div className="bg-container">
         <div className="bg-text"></div>
         <div className="splash-search">
-            <input className="search-input" type="text" placeholder="Find an exercise for you" />
+            <input className="search-input" type="text" placeholder="bench press, barbell squat, shoulder press..." />
             <button className="search-btn">Search</button>
         </div>
         <div className="splash-footer">
             <div className="splash-footer-container">
                 <h2 className="splash-header" color="red">
-                    Find the Best Exercise for You
+                    Discover the Best Exercise for You
                 </h2>
                 <div className="splash-footer-img-container">
                     <div className="splash-footer-img-box">
